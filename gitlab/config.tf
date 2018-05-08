@@ -13,6 +13,11 @@ variable "external_ip" {
     description = "External IP of Gitlab-CE"
 }
 
+variable "gitlab_host" {
+    description = "Host url of gitlab"
+    default = "GENERATE"
+}
+
 variable "auth_file" {
     description = "The configuration file containing the credentials to connect to google"
     default = ""
