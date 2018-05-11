@@ -28,7 +28,7 @@ resource "null_resource" "gitlab-runner-bootstrap" {
         when = "destroy"
         on_failure = "continue"
         inline = [
-          "sudo gitlab-ci-multi-runner unregister --name ${google_compute_instance.gitlab-ci-runner.name}"
+          "docker exec gitlab-runner unregister --name ${google_compute_instance.gitlab-ci-runner.name}"
         ]
     }
 }
