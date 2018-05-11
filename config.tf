@@ -8,7 +8,7 @@ variable "generate_external_ip" {
 
 variable "source_ranges" {
     type = "list"
-    default = ["0.0.0.0/32"]
+    default = ["0.0.0.0/0"]
 }
 
 variable "deploy_gitlab" {
