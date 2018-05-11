@@ -7,6 +7,7 @@ resource "google_compute_firewall" "external_ports_ssl" {
     count = "${var.ssl_certificate != "/dev/null" ? 1 : 0}"
     name = "${var.prefix}${var.external_ports_name}"
     network = "${var.network}"
+    target_tags = ["${var.prefix}${var.external_ports_name}"]
     source_ranges = "${var.source_ranges}"
 
     allow {
@@ -19,6 +20,7 @@ resource "google_compute_firewall" "external_ports_no_ssl" {
     count = "${var.ssl_certificate != "/dev/null" ? 0 : 1}"
     name = "${var.prefix}${var.external_ports_name}"
     network = "${var.network}"
+    target_tags = ["${var.prefix}${var.external_ports_name}"]
     source_ranges = "${var.source_ranges}"
 
     allow {

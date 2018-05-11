@@ -54,6 +54,6 @@ variable "region" {
 
 variable "external_ports_name" {
     description = "The name of the external ports object, can be used to reuse lists"
-    default =  "gitlab-external-ports"
+    default =  "gitlab"
 }
 
